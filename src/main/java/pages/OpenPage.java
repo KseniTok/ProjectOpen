@@ -40,7 +40,6 @@ public class OpenPage {
             }
             collectExchangeRates.add(collectRow);
         }
-        System.out.println(collectExchangeRates);
         return collectExchangeRates;
     }
 }
