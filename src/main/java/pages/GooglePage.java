@@ -4,24 +4,19 @@ import driver.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class GooglePage implements Page{
+public class GooglePage {
     WebDriver driver;
-
-    public GooglePage() {
-        initPage();
-        driver = WebDriverManager.getCurrentDriver();
-    }
-
     @FindBy(xpath = "//input[@value='Поиск в Google']") private WebElement searchButton;
     @FindBy(xpath = "//input[@title='Поиск']") private WebElement searchField;
     @FindBy(xpath = "//div[@class='g']") private List<WebElement> resultSearch;
 
-    @Override
-    public boolean isPageLoaded() {
-        return searchField.isDisplayed();
+    public GooglePage() {
+        driver = WebDriverManager.getCurrentDriver();
+        PageFactory.initElements(driver, this);
     }
 
     public WebElement getSearchButton() {
