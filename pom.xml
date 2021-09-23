@@ -21,6 +21,7 @@
         <allure.version>2.13.0</allure.version>
         <allure-maven>2.10.0</allure-maven>
         <cucumber-core>6.11.0</cucumber-core>
+        <allure-cucumber6-jvm>2.14.0</allure-cucumber6-jvm>
     </properties>
 
     <dependencies>
@@ -63,9 +64,8 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber6-jvm</artifactId>
-            <version>2.14.0</version>
+            <version>${allure-cucumber6-jvm}</version>
         </dependency>
-
 
     </dependencies>
 
@@ -90,7 +90,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
 
         </plugins>
     </build>

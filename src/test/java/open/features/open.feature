@@ -1,5 +1,6 @@
 Feature: UI тестирование
 
+  @regressTests
   Scenario Outline: проверить на сайте "https://www.open.ru" в блоке «Курс обмена в интернет-банке», что курс продажи больше курса покупки, для <тип валюты>
     When перейти на сайт "https://www.google.com/"
     And выполнить поиск "Открытие"
@@ -9,3 +10,4 @@ Feature: UI тестирование
     Examples:
       |тип валюты|
       |USD|
+      |EUR|

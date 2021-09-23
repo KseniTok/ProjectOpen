@@ -19,6 +19,8 @@ buildNumber.properties
 out/
 .idea/
 .idea_modules/
+allure-results/
+.allure/
 *.iml
 *.ipr
 *.iws

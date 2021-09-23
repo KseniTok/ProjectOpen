@@ -8,15 +8,15 @@ import pages.GooglePage;
 public class GooglePageDef {
     GooglePage googlePage;
 
-    @And("выполнить поиск {string}")
+    @And("^выполнить поиск (.*)$")
     public void выполнитьПоиск(String text) {
         googlePage = new GooglePage();
         googlePage.getSearchField().sendKeys(text);
         googlePage.getSearchButton().click();
     }
 
-    @Then("проверить, что  в результатах поиска есть {string}")
+    @Then("^проверить, что  в результатах поиска есть (.*)$")
     public void проверитьЧтоВРезультатахПоискаЕсть(String text) {
-        Assert.assertTrue(googlePage.getResultSearch().stream().anyMatch(x -> x.getText().contains(text)));
+        Assert.assertTrue(googlePage.getResultSearch().stream().anyMatch(x -> x.getText().contains(text)), "В результатах поиска нет: " + text);
     }
 }
